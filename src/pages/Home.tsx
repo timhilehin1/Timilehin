@@ -146,7 +146,7 @@ function Home() {
 
   return (
     <section
-      className={`layout ${theme} relative h-full  min-h-screen bg-white dark:bg-black text-black dark:text-white`}
+      className={`layout ${theme} relative h-full  min-h-screen bg-black text-white`}
     >
       <AnimatePresence mode="wait">
         {loading ? (
