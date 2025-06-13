@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbWorld } from "react-icons/tb";
+import { trackResumeDownload } from "../utils/ga4";
 
 function Home() {
   const [activeSection, setActiveSection] = useState("intro");
@@ -143,6 +144,10 @@ function Home() {
       platforms: [{ icon: TbWorld, color: "#4285F4" }],
     },
   ];
+
+  const handleClick = () => {
+    trackResumeDownload();
+  };
 
   return (
     <section
@@ -381,8 +386,9 @@ function Home() {
                     it solves.
                   </p>
                   <a
+                    onClick={handleClick}
                     href="/OLADAPO_TIMILEHIN_FRONTEND_CV.pdf"
-                    download
+                    download="OLADAPO_TIMILEHIN_FRONTEND_CV.pdf"
                     className="hover:text-[#fefeff] transition-colors text-sm text-[#969696]"
                   >
                     Download Resume
