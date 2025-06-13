@@ -19,9 +19,10 @@ export const trackEvent = (eventName: string, parameters = {}) => {
 
 // Specific function to track resume download
 export const trackResumeDownload = () => {
-  ReactGA.event("download", {
-    event_category: "engagement",
-    event_label: "resume_download",
+  ReactGA.event({
+    category: "engagement",
+    action: "download",
+    label: "resume_download",
     value: 1,
   });
 };
